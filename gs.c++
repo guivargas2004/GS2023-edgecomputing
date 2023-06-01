@@ -1,3 +1,5 @@
+//Inclusão da biblioteca e configuração do LCD e definição dos pino
+
 #include <LiquidCrystal.h>
 
 const int rs = 5;
@@ -25,6 +27,8 @@ const int sensorUmidadePin = A2;
 const int buzzerPin = 12;
 const int redPinA = 13;
 
+//Enumeração dos estados de exibição do display.
+
 enum DisplayState {
   TEMPERATURE_STATE,
   LDR_STATE,
@@ -32,6 +36,8 @@ enum DisplayState {
 };
 
 DisplayState currentState = TEMPERATURE_STATE;
+
+//Inicialização do display LCD e configuração dos pinos.
 
 void setup() {
   Serial.begin(9600);
@@ -51,6 +57,8 @@ void setup() {
   lcd.begin(16, 2);
 }
 
+//Leitura e manipulação dos valores dos sensores.
+
 void loop() {
   int sensorValue = analogRead(temperaturaPin);
   float voltage = (sensorValue / 1023.0) * 5.0;
@@ -61,6 +69,8 @@ void loop() {
   int sensorUmidade = analogRead(sensorUmidadePin);
   int umidade = map(sensorUmidade, 0, 1023, 0, 100);
 
+  //Definição dos valores das variáveis para as cores de cada leds.
+  
   int redValueT = 0;
   int greenValueT = 0;
 
@@ -97,6 +107,9 @@ void loop() {
   } else {
     redValueU = 255;
   }
+  
+  //Verificação de valores críticos que ativam
+  //o buzzer, o LED vermelho e a mensagem no display LCD.
 
   if (temperatura > 25 && ldrValue > 950 && umidade > 66) {
     tone(buzzerPin, 100, 1000);
@@ -111,6 +124,8 @@ void loop() {
     delay(1000);
   }
 
+  //Atribuição dos valores de cor para cada LED.
+  
   analogWrite(redPinT, redValueT);
   analogWrite(greenPinT, greenValueT);
 
@@ -120,6 +135,8 @@ void loop() {
   analogWrite(redPinU, redValueU);
   analogWrite(greenPinU, greenValueU);
 
+  //Atualização do estado do display.
+  
   switch (currentState) {
     case TEMPERATURE_STATE:
       displayTemperature(temperatura);
@@ -139,6 +156,8 @@ void loop() {
 
   delay(1000);
 }
+
+//Definição das funções para exibir os valores dos sensores.
 
 void displayTemperature(float temperatura) {
   lcd.clear();
