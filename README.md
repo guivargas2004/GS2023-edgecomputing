@@ -28,5 +28,20 @@ Conta de usuário (para interagir e acompanhar suas atividades no projeto)
 Comprovante de Renda para ter acesso a mais ou menos descontos dentro do app.(Tal documento é concedido na hora de realizar cadastro. O documento será analisado pela empresa para termos certeza que estamos ajudando os mais necessitados primeiro e com maiores descontos).
 
 
+Dependências:
+
+	Backend: Python, Django, banco de dados (por exemplo, PostgreSQL)
+	Frontend: HTML, CSS, JavaScript 
+	Bibliotecas Python: pandas, numpy
+
+Informações Adicionais:
+
+A Alimenta+ busca estabelecer parcerias estratégicas com empresas, ONGs e entidades governamentais para ampliar o impacto das ações e criar uma rede sólida de combate à fome através de descontos e benefícios gerais fornecidos pela empresa e seus afiliados.
+
+O projeto utiliza dados de pesquisas e estatísticas sobre a fome no Brasil para direcionar suas ações e medidas de impacto. Além de dados sobre instituições parceiras e Usuários em geral, que são essenciais para o funcionamento do projeto.
+	
+A plataforma Alimenta+ é atualizada regularmente com Novos Descontos fornecidos pelos mercados parceiros,Além de informações sobre os mesmos e destaque para aqueles que forneceram maior desconto em compras para os necessitados, informações sobre pontos de doação, eventos de conscientização e programas de capacitação sobre fome!
+
+
 	
 
