@@ -1,3 +1,4 @@
 # GS2023-edgecomputing
 
-Guilherm Vargas RM98278
+Guilherm Vargas RM 98278
+Gustavo Kenzo RM 98481
